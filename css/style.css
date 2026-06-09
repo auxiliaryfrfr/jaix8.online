@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #DFFFD8 0%, #B4E4FF 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    color: #2c3e50;
+    cursor: pointer;
+}
+
+.name-wrapper {
+    font-size: 5rem;
+    font-weight: 800;
+    display: flex;
+    z-index: 10;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    user-select: none;
+}
+
+.base-name {
+    color: #2c3e50;
+}
+
+.floating-i {
+    display: inline-block;
+    color: #4A90E2;
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+.floating-i:nth-child(1) { animation-delay: 0.1s; }
+.floating-i:nth-child(2) { animation-delay: 0.2s; }
+.floating-i:nth-child(3) { animation-delay: 0.3s; }
+.floating-i:nth-child(4) { animation-delay: 0.4s; }
+.floating-i:nth-child(5) { animation-delay: 0.5s; }
+.floating-i:nth-child(6) { animation-delay: 0.6s; }
+.floating-i:nth-child(7) { animation-delay: 0.7s; }
+.floating-i:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.subtitle {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 25px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    user-select: none;
+}
+
+.svg-container {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.plane1 {
+    top: 20%;
+    left: -10%;
+    width: 60px;
+    animation: flyPlane 12s linear infinite;
+}
+
+.plane2 {
+    top: 60%;
+    left: -10%;
+    width: 80px;
+    animation: flyPlane 10s linear infinite 3s;
+}
+
+.plane3 {
+    top: 85%;
+    left: -10%;
+    width: 45px;
+    animation: flyPlane 16s linear infinite 7s;
+}
+
+@keyframes flyPlane {
+    0% { transform: translate(0, 0) rotate(10deg); }
+    50% { transform: translate(55vw, -15vh) rotate(0deg); }
+    100% { transform: translate(120vw, -30vh) rotate(15deg); }
+}
+
+.click-plane {
+    width: 30px;
+    animation: flyAway 2s forwards ease-out;
+}
+
+@keyframes flyAway {
+    0% { transform: translate(-50%, -50%) scale(0.5) rotate(-20deg); opacity: 1; }
+    100% { transform: translate(150px, -200px) scale(1) rotate(20deg); opacity: 0; }
+}
